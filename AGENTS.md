@@ -28,3 +28,4 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+- App images (photos, logo) are real .jpg/.png files in src/assets imported directly — never lovable-assets .asset.json pointers, so they sync to GitHub as real images.
