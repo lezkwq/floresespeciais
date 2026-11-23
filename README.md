@@ -1,24 +1,18 @@
-# franflores
+# Flores Especiais
 
-as iamgens quando eu conectar no github nao podem ir com .json, mas sim como png ou jpg reais
+Site da Floricultura Flores Especiais, em Blumenau, Santa Catarina. O site apresenta arranjos e buquês, com contato por WhatsApp, informações da loja e acesso ao Instagram.
 
-This project was built with [Lovable](https://lovable.dev).
+## Desenvolvimento
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/dd6eaf37-c1fc-4ec7-8897-b002de04e7b8).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requer Node.js e npm.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
+```
+
+Para gerar a versão de produção:
+
+```sh
+npm run build
 ```

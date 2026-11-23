@@ -41,12 +41,12 @@
 
 :root {
   --radius: 0.25rem;
-  --wine: oklch(0.3 0.06 350);        /* ameixa do logo */
-  --wine-deep: oklch(0.22 0.045 350);
-  --crimson: oklch(0.52 0.18 10);     /* traço floral do logo */
-  --botanic: oklch(0.38 0.04 155);
+  --wine: oklch(0.36 0.14 340);
+  --wine-deep: oklch(0.24 0.1 340);
+  --crimson: oklch(0.56 0.22 340);
+  --botanic: oklch(0.42 0.15 150);
   --ivory: oklch(0.96 0.015 80);
-  --blush: oklch(0.77 0.06 20);
+  --blush: oklch(0.82 0.1 345);
   --on-photo: oklch(0.99 0.005 80);
   --background: oklch(0.985 0.008 80);
   --foreground: oklch(0.24 0.01 40);
@@ -67,7 +67,7 @@
   --border: oklch(0.89 0.015 60);
   --input: var(--border);
   --ring: var(--crimson);
-  --hero-veil: linear-gradient(180deg, oklch(0.2 0.04 350 / 0.55) 0%, oklch(0.2 0.04 350 / 0) 28%, oklch(0.2 0.04 350 / 0.15) 40%, oklch(0.18 0.04 350 / 0.88) 100%);
+  --hero-veil: linear-gradient(180deg, oklch(0.2 0.08 340 / 0.55) 0%, oklch(0.2 0.08 340 / 0) 28%, oklch(0.2 0.08 340 / 0.15) 40%, oklch(0.18 0.08 340 / 0.88) 100%);
 }
 
 @layer base {

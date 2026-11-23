@@ -2,27 +2,29 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Menu, X, Star, MapPin, Instagram } from "lucide-react";
 
-import logo from "@/assets/logo-fran-flores.png";
-import heroImg from "@/assets/buque-rosas-alstroemerias.jpg";
-import girassoisRosas from "@/assets/buque-girassois-rosas.jpg";
-import rosasVermelhas from "@/assets/buque-rosas-vermelhas.jpg";
-import lirios from "@/assets/buque-lirios-laranja.jpg";
-import girassolChocolate from "@/assets/buque-girassol-chocolate.jpg";
-import rosasFerrero from "@/assets/buque-rosas-ferrero.jpg";
+import logo from "@/assets/logo-flores-especiais.png";
+import heroImg from "@/assets/flores-especiais-buque-colorido.jpg";
+import girassois from "@/assets/flores-especiais-girassois.jpg";
+import buqueMisto from "@/assets/flores-especiais-buque-misto.jpg";
+import rosasVermelhas from "@/assets/flores-especiais-rosas-vermelhas.jpg";
+import arranjoColorido from "@/assets/flores-especiais-arranjo-colorido.jpg";
+import orquideas from "@/assets/flores-especiais-orquideas.jpg";
 
-const WA = "https://wa.me/5547991493938";
+const WA = "https://wa.me/5547999817928";
 const waLink = (msg: string) => `${WA}?text=${encodeURIComponent(msg)}`;
-const MSG_MAIN = "Olá! Vim pelo site da Fran Flores e gostaria de conhecer os arranjos disponíveis.";
+const MSG_MAIN = "Olá! Vim pelo site da Flores Especiais e gostaria de conhecer os arranjos disponíveis.";
 const MSG_ITEM = "Olá! Gostaria de saber mais sobre este arranjo que vi no site.";
-const INSTAGRAM = "https://www.instagram.com/floriculturafranflores/";
-const MAPS = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("R. Erwin Glau, 657, Itoupavazinha, Blumenau, SC, 89066-660");
+const INSTAGRAM = "https://instagram.com/floresespeciais";
+const ADDRESS = "R. Amazonas, 3152, Garcia, Blumenau, SC, 89022-000";
+const MAPS = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(ADDRESS);
+const REVIEWS = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Flores Especiais, R. Amazonas, 3152, Blumenau, SC");
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Fran Flores — Buquês e arranjos em Blumenau" },
+      { title: "Flores Especiais — Buquês e arranjos em Blumenau" },
       { name: "description", content: "Buquês e arranjos para presentear, celebrar e surpreender. Peça pelo WhatsApp, retire na loja ou receba em casa — Blumenau, SC." },
-      { property: "og:title", content: "Fran Flores — Flores que falam por você" },
+      { property: "og:title", content: "Flores Especiais — Flores que falam por você" },
       { property: "og:description", content: "Floricultura em Blumenau. Peça seu buquê pelo WhatsApp com retirada ou entrega." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -54,10 +56,10 @@ function WhatsIcon({ className = "" }: { className?: string }) {
 }
 
 const gallery = [
-  { src: girassoisRosas, alt: "Buquê com girassóis e rosas vermelhas envolto em tela dourada e laço vermelho", pos: "object-center" },
-  { src: rosasVermelhas, alt: "Buquê de rosas vermelhas com mosquitinho e tango em papel vinho", pos: "object-[50%_65%]" },
-  { src: lirios, alt: "Buquê de lírios laranja com tango, samambaia e laço amarelo", pos: "object-[50%_55%]" },
-  { src: girassolChocolate, alt: "Buquê de girassol com chocolate e borboleta decorativa em papel verde-água", pos: "object-[50%_45%]" },
+  { src: girassois, alt: "Buquê de girassóis amarelos em destaque", pos: "object-center" },
+  { src: buqueMisto, alt: "Buquê colorido com rosas, lírios, gérberas e flores do campo", pos: "object-[50%_65%]" },
+  { src: rosasVermelhas, alt: "Buquê de rosas vermelhas com mosquitinho e folhagens", pos: "object-[50%_55%]" },
+  { src: arranjoColorido, alt: "Arranjo de flores em tons de rosa, branco e roxo", pos: "object-[50%_45%]" },
 ];
 
 function Index() {
@@ -74,15 +76,15 @@ function Index() {
       <section className="relative isolate h-[100svh] min-h-[600px] overflow-hidden bg-wine-deep">
         <img
           src={heroImg}
-          alt="Buquê de rosas vermelhas com alstroemérias rosas e brancas, envolto em tela branca"
+          alt="Buquê colorido de flores frescas da Flores Especiais"
           fetchPriority="high"
           className="animate-slow-zoom absolute inset-0 -z-10 h-full w-full object-cover object-[50%_40%] md:object-[50%_35%]"
         />
         <div className="absolute inset-0 -z-10 bg-hero-veil" />
 
         <header className="relative z-20 flex items-center justify-between px-5 pt-5 md:px-12 md:pt-8">
-          <a href="#" aria-label="Fran Flores — início" className="block">
-            <img src={logo} alt="Fran Flores floricultura" width={64} height={64} className="h-14 w-14 md:h-16 md:w-16" />
+          <a href="#" aria-label="Flores Especiais — início" className="block">
+            <img src={logo} alt="Flores Especiais" width={176} height={96} className="h-auto w-36 md:w-44" />
           </a>
           <nav className="hidden items-center gap-10 text-sm text-on-photo md:flex" aria-label="Principal">
             {nav.map((n) => (
@@ -171,7 +173,7 @@ function Index() {
       <section className="bg-wine text-on-photo">
         <div className="grid md:grid-cols-2">
           <Reveal className="h-full">
-            <img src={rosasFerrero} alt="Buquê de rosas vermelhas com mosquitinho, eucalipto e bombons" loading="lazy" className="h-[75svh] w-full object-cover object-[50%_55%] md:h-full md:min-h-[720px]" />
+            <img src={orquideas} alt="Arranjo alto com orquídeas cor-de-rosa e flores variadas" loading="lazy" className="h-[75svh] w-full object-cover object-[50%_55%] md:h-full md:min-h-[720px]" />
           </Reveal>
           <div className="flex items-center px-6 py-16 md:px-16 lg:px-24">
             <Reveal>
@@ -198,8 +200,8 @@ function Index() {
         <ol className="mt-12 grid gap-10 md:mt-16 md:grid-cols-3 md:gap-12">
           {[
             ["Escolha o arranjo", "Veja os buquês acima ou fale com a gente sobre o que você imagina."],
-            ["Converse pelo WhatsApp", "A Fran Flores confirma disponibilidade e detalhes com você."],
-            ["Retire ou receba", "Combine a retirada na loja ou a entrega. Também atendemos presencialmente."],
+            ["Converse pelo WhatsApp", "A equipe da Flores Especiais confirma disponibilidade e detalhes com você."],
+            ["Retire ou receba", "Retire na loja da Rua Amazonas ou combine a entrega em Blumenau."],
           ].map(([t, d], i) => (
             <Reveal key={t} delay={i * 120}>
               <li className="border-t border-border pt-6">
@@ -221,15 +223,15 @@ function Index() {
       <section className="border-y border-border bg-ivory px-5 py-12 md:px-12">
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-4">
-            <span className="font-display text-5xl text-wine">4,6</span>
+            <span className="font-display text-5xl text-wine">4,9</span>
             <div>
-              <div className="flex gap-0.5 text-crimson" aria-label="4,6 de 5 estrelas">
-                {[0, 1, 2, 3, 4].map((i) => <Star key={i} className="h-4 w-4" fill="currentColor" strokeWidth={0} opacity={i === 4 ? 0.45 : 1} />)}
+              <div className="flex gap-0.5 text-crimson" aria-label="4,9 de 5 estrelas">
+                {[0, 1, 2, 3, 4].map((i) => <Star key={i} className="h-4 w-4" fill="currentColor" strokeWidth={0} />)}
               </div>
-              <p className="mt-1 text-sm text-muted-foreground">25 avaliações no Google</p>
+              <a href={REVIEWS} target="_blank" rel="noopener noreferrer" className="mt-1 inline-block text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground">95 avaliações no Google</a>
             </div>
           </div>
-          <p className="max-w-md font-display text-xl italic text-foreground md:text-2xl">Clientes de Blumenau que confiam na Fran Flores para seus momentos.</p>
+          <p className="max-w-md font-display text-xl italic text-foreground md:text-2xl">Flores lindas, atendimento atencioso e arranjos feitos com carinho em Blumenau.</p>
         </div>
       </section>
 
@@ -239,32 +241,32 @@ function Index() {
           <div className="md:col-span-6">
             <h2 className="font-display text-5xl leading-none md:text-7xl">Vamos montar <em>o seu?</em></h2>
             <a href={waLink(MSG_MAIN)} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 bg-crimson px-7 py-4 font-medium transition-transform hover:-translate-y-0.5">
-              <WhatsIcon className="h-5 w-5" /> (47) 99149-3938
+              <WhatsIcon className="h-5 w-5" /> (47) 99981-7928
             </a>
           </div>
           <div className="grid gap-8 text-sm sm:grid-cols-2 md:col-span-6">
             <div>
               <p className="text-blush">Endereço</p>
               <a href={MAPS} target="_blank" rel="noopener noreferrer" className="mt-2 flex gap-2 leading-relaxed opacity-90 hover:opacity-100">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0" /> R. Erwin Glau, 657 — Itoupavazinha<br />Blumenau, SC · 89066-660
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0" /> R. Amazonas, 3152 — Garcia<br />Blumenau, SC · 89022-000
               </a>
             </div>
             <div>
               <p className="text-blush">Atendimento</p>
-              <p className="mt-2 leading-relaxed opacity-90">Compra presencial, retirada na loja e entrega. Consulte pelo WhatsApp.</p>
+              <p className="mt-2 leading-relaxed opacity-90">Compras na loja, retirada e entrega. Consulte disponibilidade pelo WhatsApp.</p>
               <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 opacity-90 hover:opacity-100">
-                <Instagram className="h-4 w-4" /> @floriculturafranflores
+                <Instagram className="h-4 w-4" /> @floresespeciais
               </a>
             </div>
           </div>
         </div>
         <div className="mt-16 flex items-center justify-between border-t border-on-photo/15 pt-8">
-          <img src={logo} alt="Fran Flores floricultura" loading="lazy" className="h-20 w-20" />
-          <p className="text-xs opacity-60">© {new Date().getFullYear()} Fran Flores</p>
+          <img src={logo} alt="Flores Especiais" loading="lazy" className="h-auto w-40" />
+          <p className="text-xs opacity-60">© {new Date().getFullYear()} Flores Especiais</p>
         </div>
       </footer>
 
-      <a href={waLink(MSG_MAIN)} target="_blank" rel="noopener noreferrer" aria-label="Falar com a Fran Flores no WhatsApp" className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-botanic text-on-photo shadow-lg transition-transform hover:scale-105">
+      <a href={waLink(MSG_MAIN)} target="_blank" rel="noopener noreferrer" aria-label="Falar com a Flores Especiais no WhatsApp" className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-botanic text-on-photo shadow-lg transition-transform hover:scale-105">
         <WhatsIcon className="h-7 w-7" />
       </a>
     </main>
