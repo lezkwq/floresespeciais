@@ -4,6 +4,7 @@ import { Menu, X, Star, MapPin, Instagram } from "lucide-react";
 
 import logo from "@/assets/logo-flores-especiais.png";
 import heroImg from "@/assets/flores-especiais-buque-colorido.jpg";
+import heroDesktopImg from "@/assets/flores-especiais-hero-desktop.jpg";
 import girassois from "@/assets/flores-especiais-girassois.jpg";
 import buqueMisto from "@/assets/flores-especiais-buque-misto.jpg";
 import rosasVermelhas from "@/assets/flores-especiais-rosas-vermelhas.jpg";
@@ -74,12 +75,15 @@ function Index() {
     <main className="bg-background">
       {/* HERO */}
       <section className="relative isolate h-[100svh] min-h-[600px] overflow-hidden bg-wine-deep">
-        <img
-          src={heroImg}
-          alt="Buquê colorido de flores frescas da Flores Especiais"
-          fetchPriority="high"
-          className="animate-slow-zoom absolute inset-0 -z-10 h-full w-full object-cover object-[50%_40%] md:object-[50%_35%]"
-        />
+        <picture className="absolute inset-0 -z-10 block h-full w-full">
+          <source srcSet={heroDesktopImg} media="(min-width: 768px)" />
+          <img
+            src={heroImg}
+            alt="Buquê colorido de flores frescas da Flores Especiais"
+            fetchPriority="high"
+            className="animate-slow-zoom absolute inset-0 h-full w-full object-cover object-[50%_40%] md:object-[50%_35%]"
+          />
+        </picture>
         <div className="absolute inset-0 -z-10 bg-hero-veil" />
 
         <header className="relative z-20 flex items-center justify-between px-5 pt-5 md:px-12 md:pt-8">
